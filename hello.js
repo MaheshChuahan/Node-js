@@ -1,18 +1,11 @@
-import express from "express";
-import dotenv from "dotenv";
-
-dotenv.config(); // Loads .env file contents into process.env
-
+const express = require("express");
 const app = express();
 
-const PORT = 5000;
-
-
 app.get("/", (req, res) => {
-  res.send("Render Node.js Server Running Successfully!");
+  res.send("Hey there, I am Node.js running with Express!");
 });
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`✅ Server running on port ${PORT}`);
- 
+  console.log(`Server running on port ${PORT}`);
 });
